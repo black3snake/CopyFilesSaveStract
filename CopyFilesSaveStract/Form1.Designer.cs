@@ -90,7 +90,7 @@
             // 
             this.opemDirectoryToolStripMenuItem.Name = "opemDirectoryToolStripMenuItem";
             this.opemDirectoryToolStripMenuItem.Size = new System.Drawing.Size(223, 24);
-            this.opemDirectoryToolStripMenuItem.Text = "&Opem Directory";
+            this.opemDirectoryToolStripMenuItem.Text = "&Open Directory";
             this.opemDirectoryToolStripMenuItem.Click += new System.EventHandler(this.opemDirectoryToolStripMenuItem_Click);
             // 
             // destinationDirectoriyToolStripMenuItem
@@ -260,9 +260,9 @@
             this.labTimeName.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.labTimeName.Location = new System.Drawing.Point(4, 537);
             this.labTimeName.Name = "labTimeName";
-            this.labTimeName.Size = new System.Drawing.Size(146, 18);
+            this.labTimeName.Size = new System.Drawing.Size(149, 18);
             this.labTimeName.TabIndex = 2;
-            this.labTimeName.Text = "Затрачено вресени:";
+            this.labTimeName.Text = "Затрачено времени:";
             // 
             // labTime
             // 
@@ -288,7 +288,7 @@
             // 
             this.labRazmer.AutoSize = true;
             this.labRazmer.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.labRazmer.Location = new System.Drawing.Point(1055, 537);
+            this.labRazmer.Location = new System.Drawing.Point(1055, 538);
             this.labRazmer.Name = "labRazmer";
             this.labRazmer.Size = new System.Drawing.Size(120, 18);
             this.labRazmer.TabIndex = 2;

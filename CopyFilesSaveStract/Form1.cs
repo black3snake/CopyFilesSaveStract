@@ -87,11 +87,15 @@ namespace CopyFilesSaveStract
             }
             ConsoleTB.AppendText($"Все проверки прошли запускаем копирование.." + Environment.NewLine);
 
+            ConsoleTB.ScrollBars = ScrollBars.Vertical;
+
             copyFilesToolStripMenuItem.Enabled = false;
             await ZapuskAsync(listSelectFiles);
             copyFilesToolStripMenuItem.Enabled = true;
 
             labRazmer.Text = ((double)GetDirectorySize(labDirTargetName.Text)/ 1024 / 1024).ToString("F2") + " Mb";
+            
+            ConsoleTB.AppendText($"Общее количество файлов скопировано: {bc.Count}" + Environment.NewLine);
 
         }
     }

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
@@ -14,6 +15,7 @@ namespace CopyFilesSaveStract
         ParallelOptions options = new ParallelOptions();
         object locker = new object();
         static string elapsedTimeGetStatus;
+        static BlockingCollection<string> bc = new BlockingCollection<string>();
 
         internal async Task ZapuskAsync(List<string> listSelectedFiles)
         {
@@ -55,15 +57,15 @@ namespace CopyFilesSaveStract
             if(dFile != null)
                 dFile.FileCopy();
 
-
             lock (locker)
             {
                 Invoke(new Action(() =>
                 {
-                    ConsoleTB.AppendText($"файл {dFile.GetLengthFileName()} скопирован: {dFile.fileNewName}" + Environment.NewLine);
+                    ConsoleTB.AppendText($"файл (MAX_PATH:{dFile.GetLengthFileName()}) скопирован: {dFile.fileNewName}" + Environment.NewLine);
                 }));
             }
 
+            bc.Add(dFile.fileNewName);
         }
     }
 }
