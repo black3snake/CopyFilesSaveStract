@@ -35,9 +35,9 @@ namespace CopyFilesSaveStract
             {
                 if (!Directory.Exists(NewPathDir))
                     Directory.CreateDirectory(NewPathDir);
-                if(FileName.Length > 255)
+                if(FileName.Length > 255 | fileNewName.Length > 255)
                 {
-                    File.Copy("\\\\?\\"+FileName, fileNewName, true);
+                    File.Copy("\\\\?\\"+FileName, "\\\\?\\" + fileNewName, true);
                 } else
                 {
                     File.Copy(FileName, fileNewName, true);
